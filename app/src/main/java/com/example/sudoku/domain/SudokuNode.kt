@@ -7,13 +7,16 @@ data class SudokuNode(
     val y: Int,
     var color: Int = 0,
     var readOnly: Boolean = true
-): Serializable {
+) : Serializable {
+    /**
+     * The x value is *100 to allow for uniqueness
+     */
     override fun hashCode(): Int {
         return getHash(x, y)
     }
+}
 
-    private fun getHash(x: Int, y: Int): Int {
-        val newX = x * 100
-        return "$newX$y".toInt()
-    }
+internal fun getHash(x: Int, y: Int): Int {
+    val newX = x * 100
+    return "$newX$y".toInt()
 }
