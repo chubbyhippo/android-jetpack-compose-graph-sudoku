@@ -27,6 +27,12 @@ interface IGameRepository {
         onError: (Exception) -> Unit
     )
 
+    suspend fun createNewGame(
+        settings: Settings,
+        onSuccess: (Unit) -> Unit,
+        onError: (Exception) -> Unit
+    )
+
     suspend fun getSettings(
         onSuccess: (Settings) -> Unit,
         onError: (Exception) -> Unit
