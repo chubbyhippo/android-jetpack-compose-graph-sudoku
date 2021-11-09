@@ -17,7 +17,7 @@ fun AppToolbar(
     modifier: Modifier,
     title: String,
     icon: @Composable () -> Unit
-    ) {
+) {
     TopAppBar(
         modifier = modifier,
         backgroundColor = MaterialTheme
@@ -25,13 +25,13 @@ fun AppToolbar(
             .primary,
         contentColor = Color.White,
         title = {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.h6,
-                    color = if (MaterialTheme.colors.isLight) textColorLight else textColorDark,
-                    textAlign = TextAlign.Start,
-                    maxLines = 1
-                )
+            Text(
+                text = title,
+                style = MaterialTheme.typography.h6,
+                color = if (MaterialTheme.colors.isLight) textColorLight else textColorDark,
+                textAlign = TextAlign.Start,
+                maxLines = 1
+            )
         },
         actions = {
             icon()
